@@ -18,4 +18,4 @@ int a=7; // a is the variable and 7 is the value
 // string interpolation is when we add $ 
 name=anood
 from=Jordan
-hello ${anood}, welcom to ${from}.
+hello ${name}, welcom to ${from}.
