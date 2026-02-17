@@ -1,0 +1,104 @@
+// Q1
+import 'dart:io';
+
+void main() {
+  print("Enter your marks:");
+  int marks = int.parse(stdin.readLineSync()!);
+  if (marks > 90) {
+    print("Grade: A");
+  } else if (marks > 70) {
+    print("Grade: B");
+  } else if (marks >= 40) {
+    print("Grade: C");
+  } else {
+    print("Grade: F");
+  }
+}
+
+// Q2
+import 'dart:io';
+
+void main() {
+  stdout.write("Enter first student's name: ");
+  String name1 = (stdin.readLineSync()!);
+  stdout.write("Enter first student's percentage: ");
+  double percent1 = double.parse(stdin.readLineSync()!);
+
+  stdout.write("Enter second student's name: ");
+  String name2 = (stdin.readLineSync()!);
+  stdout.write("Enter second student's percentage: ");
+  double percent2 = double.parse(stdin.readLineSync()!);
+
+if (percent1 > percent2) {
+  print("$name1 has higher percentage");
+} else if (percent2 > percent1) {
+  print("$name2 has higher percentage");
+} else {
+  print("Both have equal percentage");
+}
+}
+// Q3
+import 'dart:io';
+
+void main() {
+  stdout.write("Enter first side: ");
+  double side1 = double.parse(stdin.readLineSync()!);
+
+  stdout.write("Enter second side: ");
+  double side2 = double.parse(stdin.readLineSync()!);
+
+  stdout.write("Enter third side: ");
+  double side3 = double.parse(stdin.readLineSync()!);
+
+if (side1 == side2 && side2 == side3) {
+  print("Equilateral");
+} else if (side1 == side2 && side1 == side3 && side2 == side3) {
+  print("isosceles");
+} else {
+  print("Scalene");
+}
+}
+// Q4
+import 'dart:io';
+
+void main() {
+  print("Enter a number");
+  int num = int.parse(stdin.readLineSync()!);
+  if (num % 4 == 0) {
+    print("Even");
+  } else {
+    print("Odd");
+  }
+}
+// Q5
+import 'dart:io';
+
+void main() {
+  print("Enter a number (1-7):");
+  int day = int.parse(stdin.readLineSync()!);
+  switch (day) {
+    case 1:
+      print("Sunday");
+      break;
+    case 2:
+      print("Monday");
+      break;
+    case 3:
+      print("Tuesday");
+      break;
+    case 4:
+      print("Wednesday");
+      break;
+    case 5:
+      print("Thursday");
+      break;
+    case 6:
+      print("Friday");
+      break;
+    case 7:
+      print("Saturday");
+      break;
+    default:
+      print("Invalid number");
+  }
+}
