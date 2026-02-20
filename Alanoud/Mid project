@@ -1,1 +1,9 @@
+void main(){
+  print("welcom To skylight Airways");
+  
+  print("Pleas Enter Your Full Name");
+  String Name= (stdin.readLineSync()!);
+
+  print("Dear $Name, Please Enter Your Passport Number:");
+  String Passport= (stdin.readLineSync()!);
 
