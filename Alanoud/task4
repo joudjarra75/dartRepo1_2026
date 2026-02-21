@@ -64,7 +64,7 @@ import 'dart:io';
 void main() {
   print("Enter a number");
   int num = int.parse(stdin.readLineSync()!);
-  if (num % 4 == 0) {
+  if (num % 2 == 0) {
     print("Even");
   } else {
     print("Odd");
