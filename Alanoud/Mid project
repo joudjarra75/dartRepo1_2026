@@ -1,10 +1,147 @@
-\\
-void main(){
-  print("welcom To skylight Airways");
-  
-  print("Pleas Enter Your Full Name");
-  String Name= (stdin.readLineSync()!);
+import 'dart:io';
+void main() {
+  print("Welcome To Skylight Airways");
 
-  print("Dear $Name, Please Enter Your Passport Number:");
-  String Passport= (stdin.readLineSync()!);
-\\
+  print("Please enter your full name:");
+  String name = stdin.readLineSync()!;
+
+  String passportNum= "";
+  bool validPassport = true;
+
+  while (validPassport) {
+    print("Dear $name, please enter your passport number (7 digits only):");
+    passportNum = stdin.readLineSync()!;
+
+
+    if (passportNum.length == 7 && int.tryParse(passportNum) != null) {
+      validPassport = false;
+    } else {
+      print("Invalid passport number. It must contain exactly 7 digits.");
+    }
+  }
+
+  List<String> destinations = [ "Dubai", "Istanbul", "Mexico", "New York" ];
+  List<int> prices = [200, 350, 600, 550];
+  List<double> discounts = [0.0, 0.10, 0.30, 0.20];
+
+  int choice = 0;
+  bool validChoice = true;
+
+  while (validChoice) {
+    print("\nAvailable Destinations:");
+    for (int i = 0; i < destinations.length; i++) {
+      print("${i + 1}. ${destinations[i]} - ${prices[i]} JOD "
+          "(${(discounts[i] * 100).toInt()}% discount)");
+    }
+
+    try {
+      print("\n$name, choose destination (1 ${destinations.length}):");
+      choice = int.parse(stdin.readLineSync()!);
+
+      if (choice >= 1 && choice <= destinations.length) {
+        validChoice = false; 
+      } else {
+        print("Invalid selection. Choose between 1 and ${destinations.length}.");
+      }
+    } catch (e) {
+      print("Invalid input. Please enter a number.");
+    }
+  }
+
+  int selected = choice - 1;
+  String destination = destinations[selected];
+  int basePrice = prices[selected];
+  double discountRate = discounts[selected];
+
+ 
+  List<String> flightTimes = ["8:00 AM", "2:00 PM", "9:00 PM", "4:30 PM"];
+  int timeChoice = 0;
+  bool validTime = true;
+
+  while (validTime) {
+    print("\nAvailable Flight Times:");
+    for (int i = 0; i < flightTimes.length; i++) {
+      print("${i + 1}. ${flightTimes[i]}");
+    }
+
+    try {
+      print("\nSelect flight time (1 ${flightTimes.length}):");
+      timeChoice = int.parse(stdin.readLineSync()!);
+
+      if (timeChoice >= 1 && timeChoice <= flightTimes.length) {
+        validTime = false;
+      } else {
+        print("Invalid selection. Choose between 1 and ${flightTimes.length}.");
+      }
+    } catch (e) {
+      print("Invalid input. Please enter a number.");
+    }
+  }
+
+  String flightTime = flightTimes[timeChoice - 1];
+
+
+  List<String> classes = ["Economy", "Business", "First Class"];
+  List<double> extras = [0.0, 150.0, 300.0];
+
+  int classChoice = 0;
+  bool validClass = true;
+
+  while (validClass) {
+    print("\nChoose Class:");
+    for (int i = 0; i < classes.length; i++) {
+      print("${i + 1}. ${classes[i]} (+${extras[i]} JD)");
+    }
+
+    try {
+      print("\nSelect class (1 ${classes.length})");
+      classChoice = int.parse(stdin.readLineSync()!);
+
+      if (classChoice >= 1 && classChoice <= classes.length) {
+        validClass = false;
+      } else {
+        print("Invalid selection. Choose between 1 and ${classes.length}.");
+      }
+    } catch (e) {
+      print("Invalid input. Please enter a number.");
+    }
+  }
+
+  String flightClass = classes[classChoice - 1];
+  double classExtra = extras[classChoice - 1];
+
+  int tickets = 0;
+  bool validTickets = true;
+
+  while (validTickets) {
+    try {
+      print("\nHow many tickets do you want?");
+      tickets = int.parse(stdin.readLineSync()!);
+
+      if (tickets > 0) {
+        validTickets = false;
+      } else {
+        print("Number of tickets must be greater than 0.");
+      }
+    } catch (e) {
+      print("Invalid input. Please enter a number.");
+    }
+  }
+
+  
+  double totalPrice = (basePrice + classExtra) * tickets;
+  double discountAmount = totalPrice * discountRate;
+  double finalPrice = totalPrice - discountAmount;
+
+  print("Passenger: $name");
+  print("Passport Number: $passportNum");
+  print("Destination: $destination");
+  print("Flight Time: $flightTime");
+  print("Class: $flightClass");
+  print("Tickets: $tickets");
+  print("Total Price: ${totalPrice.toStringAsFixed(2)} JD");
+  print("Discount: ${(discountRate * 100).toInt()}%");
+  print("Discount Amount: ${discountAmount.toStringAsFixed(2)} JD");
+  print("Final Price: ${finalPrice.toStringAsFixed(2)} JD");
+  print("Thank you for choosing Skylight ✈️ ");
+}
