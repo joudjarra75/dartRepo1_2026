@@ -90,7 +90,7 @@ void main() {
   while (validClass) {
     print("\nChoose Class:");
     for (int i = 0; i < classes.length; i++) {
-      print("${i + 1}. ${classes[i]} (+${extras[i]} JD)");
+      print("${i + 1}. ${classes[i]} (+${extras[i]} JOD)");
     }
 
     try {
@@ -139,9 +139,9 @@ void main() {
   print("Flight Time: $flightTime");
   print("Class: $flightClass");
   print("Tickets: $tickets");
-  print("Total Price: ${totalPrice.toStringAsFixed(2)} JD");
+  print("Total Price: ${totalPrice.toStringAsFixed(2)} JOD");
   print("Discount: ${(discountRate * 100).toInt()}%");
-  print("Discount Amount: ${discountAmount.toStringAsFixed(2)} JD");
-  print("Final Price: ${finalPrice.toStringAsFixed(2)} JD");
+  print("Discount Amount: ${discountAmount.toStringAsFixed(2)} JOD");
+  print("Final Price: ${finalPrice.toStringAsFixed(2)} JOD");
   print("Thank you for choosing Skylight ✈️ ");
 }
