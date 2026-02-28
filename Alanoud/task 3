@@ -1,1 +1,89 @@
+// Q1
+void main(){
+print("al anood");
+}
+// Q2
+void main(){
+print("Hello I am \"John Doe\"");
+print('Hello I am "John Doe"');
+}
+// Q3
+void main(){
+const int num = 7;
+print(num);
+}
+// Q4
+import 'dart:io';
+void main(){
+double p=50.38;
+double t=20.44;
+double r=2.41;
+double interest=(p*t*r)/100;
+print("the result is $interest");
+}
+// Q5
+import 'dart:io';
+void main(){
+  print("Enter a number:");
+  int number = int.parse(stdin.readLineSync()!);
+  int square = number * number;
+  print("Square = $square");
+}
+// Q6
+import 'dart:io';
 
+void main(){
+  print("Enter first name:");
+  String firstName = stdin.readLineSync()!;
+
+  print("Enter last name:");
+  String lastName = stdin.readLineSync()!;
+
+  String fullName = "$firstName $lastName";
+
+  print("Full Name = $fullName");
+}
+// Q7
+import 'dart:io';
+void main(){
+  stdout.write("Enter first number: ");
+  int a = int.parse(stdin.readLineSync()!);
+
+  stdout.write("Enter second number: ");
+  int b = int.parse(stdin.readLineSync()!);
+
+  int quotient = a ~/ b;   // integer division
+  int remainder = a % b;   // remainder
+
+  print("Quotient = $quotient");
+  print("Remainder = $remainder");
+}
+// Q8
+void main(){
+  int a = 5;
+  int b = 10;
+
+  int temp = a;
+  a = b;
+  b = temp;
+
+  print("a = $a");
+  print("b = $b");
+}
+// Q9
+void main(){
+  String text = "Hello World Dart";
+
+  String result = text.replaceAll(" ", "");
+
+  print(result);
+}
+// Q10
+void main(){
+  String numberString = "25";
+
+  int number = int.parse(numberString);
+
+  print(number);
+}
+// Q11
