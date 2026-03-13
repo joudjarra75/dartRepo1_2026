@@ -1,0 +1,56 @@
+//Q1
+class Animal {
+  void makeSound() {
+    print("Animal makes a sound");
+  }
+}
+
+class Dog extends Animal {
+  @override
+  void makeSound() {
+    print("Dog barks");
+  }
+}
+
+class Cat extends Animal {
+  @override
+  void makeSound() {
+    print("Cat meows");
+  }
+}
+
+void main() {
+  Dog d = Dog();
+  Cat c = Cat();
+
+  d.makeSound();
+  c.makeSound();
+}
+
+
+
+//Q2
+abstract class Vehicle {
+  String brand;
+  Vehicle(this.brand);
+}
+
+class Car extends Vehicle {
+  Car(String brand) : super(brand);
+}
+
+class Bike extends Vehicle {
+  Bike(String brand) : super(brand);
+}
+
+void main() {
+  Car c = Car("Toyota");
+  Bike b = Bike("Yamaha");
+
+  print(c.brand);
+  print(b.brand);
+}
+
+
+
+//Q3
